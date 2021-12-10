@@ -79,6 +79,7 @@ p <- ggplot(df.m, aes(Age, Count)) +
                            sec.axis = sec_axis(~./sum(df$Cases), 
                                                labels = percent, 
                                                name = 'Case Fatality Rate')) +
-        ggtitle("COVID-19 Case Count and Case Fatality Rate based on Age Group")
+        ggtitle("COVID-19 Case Count, Deaths, and Case Fatality Rate 
+                based on Age Group")
 
 p
