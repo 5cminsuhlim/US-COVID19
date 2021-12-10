@@ -41,16 +41,16 @@ deathsdata$Age.Group <- factor(deathsdata$Age.Group, levels = c('0-17 years', '1
 ## clean covid19 by age data to match groupings above
 byagedata <- byagedata[3:13, ]
 colnames(byagedata) <- c('Age', 'Count')
-byagedata$`Case Count` <- as.numeric(byagedata$`Case Count`)
+byagedata$Count <- as.numeric(byagedata$Count)
 
-y0_17 <- sum(byagedata$`Case Count`[1:4])
-y18_29 <- byagedata$`Case Count`[5]
-y30_39 <- byagedata$`Case Count`[6]
-y40_49 <- byagedata$`Case Count`[7]
-y50_64 <- byagedata$`Case Count`[8]
-y65_74 <- byagedata$`Case Count`[9]
-y75_84 <- byagedata$`Case Count`[10]
-y85_ <- byagedata$`Case Count`[11]
+y0_17 <- sum(byagedata$Count[1:4])
+y18_29 <- byagedata$Count[5]
+y30_39 <- byagedata$Count[6]
+y40_49 <- byagedata$Count[7]
+y50_64 <- byagedata$Count[8]
+y65_74 <- byagedata$Count[9]
+y75_84 <- byagedata$Count[10]
+y85_ <- byagedata$Count[11]
 
 col1 <- c('0-17 years', '18-29 years', '30-39 years', 
           '40-49 years', '50-64 years', '65-74 years', 
@@ -62,7 +62,7 @@ colnames(casesbyage) <- c('Age', 'Count')
 
 
 ## merge deaths and cases dfs
-df <- data.frame(deathsdata, casesbyage$`Case Count`)
+df <- data.frame(deathsdata, casesbyage$Count)
 colnames(df) <- c('Age', 'Deaths', 'Cases')
 df.m <- melt(df, id.vars = 'Age')
 colnames(df.m) <- c('Age', 'Type', 'Count')
@@ -70,11 +70,15 @@ colnames(df.m) <- c('Age', 'Type', 'Count')
 
 ## plot
 p <- ggplot(df.m, aes(Age, Count)) + 
-        geom_bar(aes(fill = Type), width = .9, position = position_dodge(width = .9), stat = 'identity') +
+        geom_bar(aes(fill = Type), width = .9, 
+                 position = position_dodge(width = .9), stat = 'identity') +
         theme(legend.position = 'top', legend.title = element_blank(), 
-              axis.title.x = element_text(), axis.title.y = element_text()) +
+              axis.title.x = element_text(), axis.title.y = element_text(),
+              plot.title = element_text(hjust = 0.5)) +
         scale_y_continuous(expand = expansion(mult = c(0, .05)), labels = comma, 
-                           sec.axis = sec_axis(~./sum(df$Cases), labels = percent, 
-                                               name = 'Proportion (in %)'))
+                           sec.axis = sec_axis(~./sum(df$Cases), 
+                                               labels = percent, 
+                                               name = 'Case Fatality Rate')) +
+        ggtitle("COVID-19 Case Count and Case Fatality Rate based on Age Group")
 
 p
