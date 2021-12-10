@@ -1,5 +1,8 @@
 ## by_state
-
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(maps)
 
 ## https://data.cdc.gov/api/views/9mfq-cb36/rows.csv?accessType=DOWNLOAD
 ## downloaded "2021-12-10 16:13:05 AEDT"
@@ -36,11 +39,17 @@ colnames(df.m) <- c('State', 'Type', 'Count')
 
 
 p <- ggplot(df.m, aes(State, Count)) + 
-        geom_bar(aes(fill = Type), width = .9, position = position_dodge(width = .9), stat = 'identity') +
+        geom_bar(aes(fill = Type), width = .9, 
+                 position = position_dodge(width = .9), stat = 'identity') +
         theme(legend.position = 'top', legend.title = element_blank(), 
-              axis.title.x = element_text(), axis.title.y = element_text()) +
+              axis.title.x = element_text(), axis.title.y = element_text(),
+              plot.title = element_text(hjust = 0.5)) +
         scale_y_continuous(expand = expansion(mult = c(0, .05)), labels = comma, 
-                           sec.axis = sec_axis(~./sum(states$Total.Cases), labels = percent, 
-                                               name = 'Proportion (in %)'))
+                           sec.axis = sec_axis(~./sum(states$Total.Cases), 
+                                               labels = percent, 
+                                               name = 'Case Fatality Rate')) +
+        scale_fill_discrete(labels = c('Total Cases', 'Total Deaths')) +
+        ggtitle("COVID-19 Case Count, Deaths, and Case Fatality Rate 
+                based on Age Group")
 
 p
