@@ -1,4 +1,4 @@
-## by age
+## by_age
 library(dplyr)
 library(ggplot2)
 library(scales)
