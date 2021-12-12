@@ -8,6 +8,7 @@ This repo contains R code that analyzes publicly available COVID-19 data from th
 - scales
 - readxl
 - reshape2
+- lubridate
 
 ## Scripts
 ### `by_age.R`
@@ -23,6 +24,10 @@ This repo contains R code that analyzes publicly available COVID-19 data from th
 - Groups current COVID19 cases and deaths in the U.S. by state and creates a heatmap of the U.S. based on case fatality rate.
 - Uses data from the [CDC](https://data.cdc.gov/api/views/9mfq-cb36/rows.csv?accessType=DOWNLOAD), downloaded "2021-12-10 16:13:05 AEDT"
 
+### `deaths_and_vaxdoses_by_date_combo.R`
+- Groups current COVID19 cases and vaccines administered in the U.S. by date and creates a combo chart, where the bar chart represents total vaccines doses administered and the line graph represents weekly deaths.
+- Uses data from the [CDC](https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD), downloaded "2021-12-11 13:16:14 AEDT"
+- Uses data from the [CDC](https://data.cdc.gov/api/views/vsak-wrfu/rows.csv?accessType=DOWNLOAD), downloaded "2021-12-11 13:28:40 AEDT"
 
 ## Important Note
 While much of the data used within this repo are from validated sources, the analysis and visualizations may not actually represent reality accurately.
