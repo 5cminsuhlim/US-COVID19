@@ -50,13 +50,12 @@ p <- ggplot(merged, aes(long, lat)) +
                          fill = Total.Deaths / Total.Cases), color = 'black', 
                      size = .1) +
         geom_text(data = centroids, aes(x = long, y = lat, label = State), 
-                  size = 2) + 
+                  size = 2, color = 'black') + 
         theme(legend.position = 'right', legend.title = element_text(), 
               axis.title.x = element_blank(), axis.title.y = element_blank(),
               axis.ticks = element_blank(), axis.text = element_blank(),
               plot.title = element_text(hjust = 0.5)) + 
-        scale_fill_continuous(high = "darkred", low = "lightgray", 
-                              name = "Case Fatality Rate") + 
+        scale_fill_continuous(name = "Case Fatality Rate", low = '#FFFFCC', high = '#800026') +
         ggtitle("USA Heatmap based on COVID-19 Case Fatality Rate") +
         coord_map()
 
