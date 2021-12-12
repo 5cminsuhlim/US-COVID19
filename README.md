@@ -1,6 +1,6 @@
 # US COVID19 Data Analysis
 
-This repo contains R code that analyzes publicly available COVID-19 data from the U.S. by cleaning, sorting, and plotting.
+This repo contains R code (in the RScripts folder) that analyzes publicly available COVID-19 data from the U.S. by cleaning, sorting, and plotting.
 
 ## Libraries Used
 - dplyr
