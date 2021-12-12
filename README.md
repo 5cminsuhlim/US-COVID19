@@ -22,3 +22,21 @@ This repo contains R code that analyzes publicly available COVID-19 data from th
 ### `by_state_map.R`
 - Groups current COVID19 cases and deaths in the U.S. by state and creates a heatmap of the U.S. based on case fatality rate.
 - Uses data from the [CDC](https://data.cdc.gov/api/views/9mfq-cb36/rows.csv?accessType=DOWNLOAD), downloaded "2021-12-10 16:13:05 AEDT"
+
+
+## Important Note
+While much of the data used within this repo are from validated sources, the analysis and visualizations may not actually represent reality accurately.
+According to the [CDC's Estimated COVID-19 Burden report](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/burden.html):
+
+- 1 in 4.0 (95% UI 3.4-4.7) COVID-19 infections were reported
+- 1 in 3.4 (95% UI 3.0-3.8) COVID-19 symptomatic illnesses were reported
+- 1 in 1.9 (95% UI 1.7-2.1) COVID-19 hospitalizations were reported
+- 1 in 1.32 (95% UI 1.29-1.34) COVID-19 deaths were reported
+
+This suggests that the actual number of COVID-19 cases and deaths in the U.S. may be underrepresented in currently available data. 
+
+Additionally, according to the [CDC's daily COVID-19 updates](https://www.cdc.gov/nchs/nvss/vsrr/covid19/index.htm), COVID-19 deaths may not fully be representative of reality because:
+
+1. States report death counts at differing rates,
+2. COVID-19 deaths can include cases with or without laboratory confirmation of COVID-19 (i.e. "presumed COVID-19"), and
+3. Deaths *from* and *with* COVID-19 are reported cumulatively.
