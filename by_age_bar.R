@@ -1,4 +1,4 @@
-## by_age
+## by_age_bar
 library(dplyr)
 library(ggplot2)
 library(scales)
@@ -83,3 +83,5 @@ p <- ggplot(df.m, aes(Age, Count)) +
                 based on Age Group")
 
 p
+
+## axis
