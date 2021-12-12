@@ -73,7 +73,9 @@ p <- ggplot(df.m, aes(Age, Count)) +
         geom_bar(aes(fill = Type), width = .9, 
                  position = position_dodge(width = .9), stat = 'identity') +
         theme(legend.position = 'top', legend.title = element_blank(), 
-              axis.title.x = element_text(), axis.title.y = element_text(),
+              axis.title.x = element_text(), 
+              axis.title.y.left = element_text(vjust = 3),
+              axis.title.y.right = element_text(vjust = 3),
               plot.title = element_text(hjust = 0.5)) +
         scale_y_continuous(expand = expansion(mult = c(0, .05)), labels = comma, 
                            sec.axis = sec_axis(~./sum(df$Cases), 
@@ -83,5 +85,3 @@ p <- ggplot(df.m, aes(Age, Count)) +
                 based on Age Group")
 
 p
-
-## axis
