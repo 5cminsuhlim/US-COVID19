@@ -54,3 +54,7 @@ Additionally, according to the [CDC's daily COVID-19 updates](https://www.cdc.go
 1. States report death counts at differing rates,
 2. COVID-19 deaths can include cases with or without laboratory confirmation of COVID-19 (i.e. "presumed COVID-19"), and
 3. Deaths *from* and *with* COVID-19 are reported cumulatively.
+
+Furthermore, based on a [CDC Laboratory Alert from July 2021](https://www.cdc.gov/csels/dls/locs/2021/07-21-2021-lab-alert-Changes_CDC_RT-PCR_SARS-CoV-2_Testing_1.html), "the CDC 2019-Novel Coronavirus (2019-nCoV) Real-Time RT-PCR Diagnostic Panel, the assay first introduced in Februrary 2020 for detection of SARS-COV-2" will no longer be used and testing protocols will transition to "another FDA-authorized COVID-19 test... that can facilitate detection and differentiation of SARS-CoV-2 and influenza viruses."
+
+This suggests that the RT-PCR assays used throughout 2020 and 2021 may have cross-detected both COVID-19 and influenza, which may artificially inflate COVID-19 cases.
